@@ -22,11 +22,8 @@ changes:
     until the maximum is reached.
     **Default:** `Infinity`.
   * `maxFreeSockets` {number} 在空闲状态下保持打开的套接字的最大数量。仅当 `keepAlive` 被设置为 `true` 时才相关。**默认值:** `256`。
-  * `scheduling` {string} Scheduling strategy to apply when picking
-    the next free socket to use. It can be `'fifo'` or `'lifo'`.
-    The main difference between the two scheduling strategies is that `'lifo'`
-    selects the most recently used socket, while `'fifo'` selects
-    the least recently used socket.
+  * `scheduling` {string} 挑选下一个空闲的套接字所使用的策略。可以是“先进先出”或者“后进先出”。
+    两者之间的主要差别是，后进先出选择最近所使用过的套接字，而先进先出选择最早使用过的套接字。
     In case of a low rate of request per second, the `'lifo'` scheduling
     will lower the risk of picking a socket that might have been closed
     by the server due to inactivity.
